@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone ="yes"?>
+<Faktura>
+  <NaglowekFaktury>
+  <DataWystawienia>2023-04-15</DataWystawienia><miastoWystawienia>Lublin></miastoWystawienia>
+    <NumerFakturyVAT>1/09/2023</NumerFakturyVAT>
+	<DataSprzedazy>2023-09-28</DataSprzedazy>
+    <SposobZaplaty>Przelew</SposobZaplaty>
+	<TerminPlatnosci>2023-10-15</TerminPlatnosci>
+    <Sprzedawca>
+      <NazwaSprzedawcy>Domowa Fabryka Dżemu Jabłkowego</NazwaSprzedawcy>
+      <AdresSprzedawcy>
+		<NazwaUlicySprzedawcy>ul.Owocowa</NazwaUlicySprzedawcy>
+		<NrUlicyiDomuSprzedawcy>123</NrUlicyiDomuSprzedawcy>
+		<KodPocztowySprzedawcy>40-506</KodPocztowySprzedawcy>
+		</AdresSprzedawcy>
+		<NIPSprzedawcy>9720902729</NIPSprzedawcy>
+		<AdresEmailSprzedawcy>owocowafirma@jablko.pl</AdresEmailSprzedawcy>
+		<NrTelefonuSprzedawcy>555-555-555</NrTelefonuSprzedawcy>
+    </Sprzedawca>
+    <Nabywca>
+      <NazwaNabywcy>Kowalski i Syn</NazwaNabywcy>
+      <AdresNabywcy>
+		<NazwaUlicyNabywcy>ul.Owocowa</NazwaUlicyNabywcy>
+		<NrUlicyiDomuNabywcy>123</NrUlicyiDomuNabywcy>
+		<KodPocztowyNabywcy>40-506</KodPocztowyNabywcy>
+	  </AdresNabywcy>
+      <NIPNabywcy>9720902729</NIPNabywcy>
+    </Nabywca>
+	<Odbiorca>
+	<NazwaOdbiorcy>Kowalski i Syn</NazwaOdbiorcy>
+      <AdresOdbiorcy>
+		<NazwaUlicyOdbiorcy>ul.Owocowa</NazwaUlicyOdbiorcy>
+		<NrUlicyiDomuOdbiorcy>123</NrUlicyiDomuOdbiorcy>
+		<KodPocztowyOdbiorcy>40-506</KodPocztowyOdbiorcy>
+	  </AdresOdbiorcy>
+      <NIPOdbiorcy>9720902729</NIPOdbiorcy>
+	</Odbiorca>
+  </NaglowekFaktury>
+  <PozycjeFaktury>
+    <PozycjaFaktury>
+      <NazwaProduktu>Dżem jabłkowy</NazwaProduktu>
+      <LiczbaProduktow>1000</LiczbaProduktow>
+      <CenaProduktuNetto>2.50 PLN</CenaProduktuNetto>
+      <WartoscNetto>2500.00 PLN</WartoscNetto>
+      <StawkaVAT>23%</StawkaVAT>
+      <VAT>575.00 PLN</VAT>
+      <WartoscBrutto>3075.00 PLN</WartoscBrutto>
+    </PozycjaFaktury>
+  </PozycjeFaktury>
+  <Podsumowanie>
+    <RazemWartoscNetto>2500.00 PLN</RazemWartoscNetto>
+    <RazemVAT>575.00 PLN</RazemVAT>
+    <RazemWartoscBrutto>3075.00 PLN</RazemWartoscBrutto>
+	<Zaplacono>0.00 PLN</Zaplacono>
+	<PozostaloDoZaplaty>3075.00 PLN</PozostaloDoZaplaty>
+	<KwotaSlownie>trzy tysiące siedemdziesiąt pięć PLN</KwotaSlownie>
+	<NrKontaBankowegoSprzedawcy>10102010200000000987654321</NrKontaBankowegoSprzedawcy>
+	<Uwagi></Uwagi>
+  </Podsumowanie>
+  <OsobaUpowaznionaDoOtrzymania>Jan Koperek</OsobaUpowaznionaDoOtrzymania>
+  <OsobaUpowaznionaDoWystawienia>Gustaw Żbik</OsobaUpowaznionaDoWystawienia>
+</Faktura>
