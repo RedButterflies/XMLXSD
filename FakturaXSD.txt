@@ -1,0 +1,222 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Faktura">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="NaglowekFaktury">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:date" name="DataWystawienia"/>
+              <xs:element type="xs:string" name="miastoWystawienia"/>
+              <xs:element type="xs:string" name="NumerFakturyVAT"/>
+              <xs:element type="xs:date" name="DataSprzedazy"/>
+              <xs:element type="xs:string" name="SposobZaplaty"/>
+              <xs:element type="xs:date" name="TerminPlatnosci"/>
+              <xs:element name="Sprzedawca">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="NazwaSprzedawcy"/>
+                    <xs:element name="AdresSprzedawcy">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="NazwaUlicySprzedawcy"/>
+                          <xs:element type="xs:string" name="NrUlicyiDomuSprzedawcy"/>
+                          <xs:element name="KodPocztowySprzedawcy" >
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="\d{2}-\d{3}"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                   <xs:element name="NIPSprzedawcy">
+                    <xs:simpleType>
+  <xs:restriction base="xs:string">
+    <xs:pattern value="(PL|pl)?\d{10}"/>
+  </xs:restriction>
+</xs:simpleType>
+                    </xs:element>
+                    <xs:element name="AdresEmailSprzedawcy">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+                    <xs:element type="xs:string" name="NrTelefonuSprzedawcy"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Nabywca">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="NazwaNabywcy"/>
+                    <xs:element name="AdresNabywcy">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="NazwaUlicyNabywcy"/>
+                          <xs:element type="xs:string" name="NrUlicyiDomuNabywcy"/>
+                          <xs:element name="KodPocztowyNabywcy" >
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="\d{2}-\d{3}"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NIPNabywcy">
+                    <xs:simpleType>
+  <xs:restriction base="xs:string">
+    <xs:pattern value="(PL|pl)?\d{10}"/>
+  </xs:restriction>
+</xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Odbiorca">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="NazwaOdbiorcy"/>
+                    <xs:element name="AdresOdbiorcy">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="NazwaUlicyOdbiorcy"/>
+                          <xs:element type="xs:string" name="NrUlicyiDomuOdbiorcy"/>
+                         <xs:element name="KodPocztowyOdbiorcy" >
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="\d{2}-\d{3}"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                   <xs:element name="NIPOdbiorcy">
+                    <xs:simpleType>
+  <xs:restriction base="xs:string">
+    <xs:pattern value="(PL|pl)?\d{10}"/>
+  </xs:restriction>
+</xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PozycjeFaktury">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PozycjaFaktury">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="NazwaProduktu"/>
+                    <xs:element type="xs:int" name="LiczbaProduktow"/>
+                     <xs:element name="CenaProduktuNetto">                
+                    <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+                    <xs:element name="WartoscNetto">                
+                    <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+                    <xs:element name="StawkaVAT">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d+)?%"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+                    <xs:element name="VAT">
+                      <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+                    <xs:element name="WartoscBrutto">
+                    <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Podsumowanie">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RazemWartoscNetto">
+              <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+              <xs:element name="RazemVAT">
+                <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+              <xs:element name="RazemWartoscBrutto">
+              <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+              <xs:element name="Zaplacono">
+                <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+              <xs:element name="PozostaloDoZaplaty">
+              <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d{1,2})? PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+                      </xs:element>
+              <xs:element name="KwotaSlownie">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+PLN"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+              <xs:element name="NrKontaBankowegoSprzedawcy">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="PL\d{26}|\d{26}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+              <xs:element type="xs:string" name="Uwagi"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="OsobaUpowaznionaDoOtrzymania"/>
+        <xs:element type="xs:string" name="OsobaUpowaznionaDoWystawienia"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
